@@ -4,325 +4,394 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PT. Empat Sinergi Utama</title>
+    <title>PT. Empat Sinergi Utama - Manpower Services</title>
     
     <!-- Meta Tags SEO & OG -->
-    <meta name="description" content="PT. Empat Sinergi Utama - Penyedia Layanan Solusi Human Resources dan Building Maintenance Terbaik dan Terpercaya.">
+    <meta name="description" content="PT. Empat Sinergi Utama - Penyedia Jasa Tenaga Kerja Alih Daya Terpercaya, Unggul, dan Profesional.">
     <meta property="og:title" content="PT. Empat Sinergi Utama"/>
-    <meta property="og:description" content="Solusi terintegrasi untuk kebutuhan bisnis Anda." />
-    <meta property="og:url" content="https://empatsinergiutama.co.id" />
     <meta property="og:image" content="2.png" />
-    <meta name="robots" content="index, follow">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
-    <!-- Fonts -->
+    <!-- Fonts & FontAwesome Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome & AOS Animation -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Custom Premium Styling (Menggunakan Warna dari Logo 2.png) -->
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0b0204; /* Dark rich background */
+            background-color: #fdfcfb;
+            color: #2b2325;
         }
         h1, h2, h3, .font-heading {
             font-family: 'Montserrat', sans-serif;
         }
-        /* Custom Colors based on Logo */
-        .color-maroon { color: #6b0d15; }
-        .bg-maroon { background-color: #6b0d15; }
-        .color-gold { color: #c4922b; }
-        .bg-gold { background-color: #c4922b; }
-        
-        /* Premium Gradient Header on Scroll */
-        .header-scrolled {
-            background: rgba(11, 2, 4, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(196, 146, 43, 0.2);
+
+        /* City Silhouette Overlay (Meniru Background di image_9db282.jpg) */
+        .premium-bg {
+            background: 
+                linear-gradient(to bottom, rgba(253, 252, 251, 0.92) 0%, rgba(253, 252, 251, 0.85) 50%, rgba(253, 252, 251, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
-        
-        /* Gold Glow Effect */
-        .glow-hover:hover {
-            box-shadow: 0 0 20px rgba(196, 146, 43, 0.4);
-            transform: translateY(-4px);
+
+        /* Geometri Pojok Kanan Atas (Maroon) */
+        .geo-top-maroon {
+            clip-path: polygon(35% 0, 100% 0, 100% 55%, 65% 55%);
+            background-color: #580c12;
+        }
+
+        /* Geometri Pojok Kiri Bawah (Gold - UPGRADED / DIGEDEIN) */
+        .geo-bottom-gold {
+            clip-path: polygon(0 30%, 45% 100%, 0 100%);
+            background-color: #ba8b25;
+        }
+
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(88, 12, 18, 0.08);
+        }
+
+        /* Glass Content Card untuk Modal */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(88, 12, 18, 0.1);
+        }
+
+        /* Hover Glow Bundar Premium */
+        .premium-icon-btn {
+            background: #ffffff;
+            border: 2px solid #ba8b25;
+            box-shadow: 0 8px 20px rgba(186, 139, 37, 0.15);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .premium-icon-btn:hover {
+            background: #580c12;
+            border-color: #ba8b25;
+            color: #ffffff !important;
+            box-shadow: 0 12px 24px rgba(88, 12, 18, 0.25);
+            transform: translateY(-6px);
+        }
+
+        /* Modal Toggle Animation */
+        .modal-overlay {
+            opacity: 0;
+            pointer-events: none;
             transition: all 0.3s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
         }
     </style>
 </head>
-<body class="text-gray-100 overflow-x-hidden">
+<body class="premium-bg min-h-screen flex flex-col justify-between relative overflow-x-hidden">
 
-    <!-- HEADER / NAVIGATION -->
-    <header id="mainHeader" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5">
-        <div class="container mx-auto px-6 lg:px-16 flex justify-between items-center">
-            <!-- Logo area -->
-            <a href="#" class="flex items-center gap-3">
-                <!-- Fallback jika file 2.png ditaruh di folder yang sama -->
-                <img src="logo.png" alt="PT. Empat Sinergi Utama Logo" class="h-12 lg:h-14 object-contain">
-            </a>
+    <!-- Elemen Geometri Dekoratif Statis (Sesuai Layout image_9db282.jpg) -->
+    <div class="absolute top-0 right-0 w-8/12 h-[500px] geo-top-maroon z-0 pointer-events-none hidden lg:block"></div>
+    <div class="absolute bottom-0 left-0 w-5/12 h-[450px] geo-bottom-gold z-0 pointer-events-none hidden lg:block"></div>
+
+    <!-- MAIN HEADER -->
+    <header class="w-full z-40 sticky top-0 glass-nav py-4 px-4 lg:px-16">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Brand Logotype -->
+            <div class="flex items-center gap-3">
+                <div class="bg-white p-1.5 rounded-xl shadow-md border border-gray-100">
+                    <img src="https://uploads.onecompiler.io/444vqrk6r/44pabu3a2/logo.png" alt="PT. ESU Logo" class="h-9 object-contain">
+                </div>
+                <div>
+                    <span class="block text-xs font-bold tracking-widest text-[#580c12]">PT. EMPAT SINERGI UTAMA</span>
+                    <span class="block text-[9px] uppercase text-gray-500 font-bold tracking-widest">Manpower Services</span>
+                </div>
+            </div>
             
-            <!-- Desktop Menu -->
+            <!-- Desktop Navigation Links -->
             <nav class="hidden lg:flex items-center gap-8">
-                <a href="#" class="text-sm font-medium hover:color-gold transition-colors text-white">Home</a>
-                <a href="#about" class="text-sm font-medium text-gray-300 hover:color-gold transition-colors">About Us</a>
-                <a href="#services" class="text-sm font-medium text-gray-300 hover:color-gold transition-colors">Services</a>
-                <a href="#quote" class="text-sm font-medium text-gray-300 hover:color-gold transition-colors">Philosophy</a>
-                <a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-[#6b0d15] to-[#8a141e] border border-[#c4922b]/30 rounded-full text-xs font-semibold tracking-wider uppercase text-white hover:border-[#c4922b] transition-all duration-300 shadow-lg">Contact Us</a>
+                <button onclick="openModal('about-us')" class="text-xs font-bold uppercase tracking-wider text-gray-700 hover:text-[#580c12] transition-colors">About Us</button>
+                <button onclick="openModal('vision-mission')" class="text-xs font-bold uppercase tracking-wider text-gray-700 hover:text-[#580c12] transition-colors">Vision & Mission</button>
+                <button onclick="openModal('portfolio')" class="text-xs font-bold uppercase tracking-wider text-gray-700 hover:text-[#580c12] transition-colors">Portfolio</button>
+                <a href="mailto:manpower.services@empatsinergiutama.co.id" class="px-5 py-2 bg-[#580c12] text-white rounded-lg text-xs font-bold tracking-widest uppercase hover:bg-[#3d070b] transition-all shadow-sm">Contact Us</a>
             </nav>
 
-            <!-- Mobile Burger Menu Button -->
-            <button onclick="toggleMobileMenu()" class="lg:hidden text-white text-2xl focus:outline-none">
+            <!-- Mobile Menu Toggle Button -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-[#580c12] text-xl focus:outline-none">
                 <i id="menuIcon" class="fa-solid fa-bars-staggered"></i>
             </button>
         </div>
     </header>
 
     <!-- MOBILE NAVIGATION DROPDOWN -->
-    <div id="mobileMenu" class="fixed inset-0 bg-[#0b0204]/fa z-40 hidden backdrop-blur-lg flex flex-col justify-center items-center gap-8 text-center transition-all duration-300">
-        <a onclick="toggleMobileMenu()" href="#" class="text-xl font-semibold text-white hover:color-gold">Home</a>
-        <a onclick="toggleMobileMenu()" href="#about" class="text-xl font-semibold text-white hover:color-gold">About Us</a>
-        <a onclick="toggleMobileMenu()" href="#services" class="text-xl font-semibold text-white hover:color-gold">Services</a>
-        <a onclick="toggleMobileMenu()" href="#quote" class="text-xl font-semibold text-white hover:color-gold">Philosophy</a>
-        <a onclick="toggleMobileMenu()" href="#contact" class="px-8 py-3 bg-gold text-[#0b0204] font-bold rounded-full">Contact Us</a>
+    <div id="mobileMenu" class="fixed inset-x-0 top-[69px] bg-white border-b border-gray-100 shadow-xl z-50 hidden flex-col p-6 gap-4 text-center">
+        <button onclick="toggleMobileMenu(); openModal('about-us')" class="text-sm font-bold text-gray-800 py-2 border-b border-gray-50">About Us</button>
+        <button onclick="toggleMobileMenu(); openModal('vision-mission')" class="text-sm font-bold text-gray-800 py-2 border-b border-gray-50">Vision & Mission</button>
+        <button onclick="toggleMobileMenu(); openModal('portfolio')" class="text-sm font-bold text-gray-800 py-2 border-b border-gray-50">Portfolio</button>
+        <a href="mailto:manpower.services@empatsinergiutama.co.id" class="w-full py-3 bg-[#580c12] text-white rounded-lg text-xs font-bold block uppercase tracking-wider">Contact Us</a>
     </div>
 
-    <!-- HERO SECTION (Ultra Premium Visuals) -->
-    <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
-        <!-- Background Overlay & Subtle Gradient -->
-        <div class="absolute inset-0 bg-radial-[circle_at_center,rgba(107,13,21,0.15)_0%,rgba(11,2,4,1)_70%] z-0"></div>
-        
-        <!-- Premium Abstract Background Graphic elements -->
-        <div class="absolute top-1/4 left-1/10 w-96 h-96 bg-[#6b0d15]/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-1/4 right-1/10 w-96 h-96 bg-[#c4922b]/5 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="container mx-auto px-6 lg:px-16 text-center relative z-10" data-aos="fade-up" data-aos-duration="1200">
-            <!-- Mini Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#6b0d15]/30 border border-[#c4922b]/30 mb-8 backdrop-blur-sm">
-                <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-                <span class="text-xs font-semibold tracking-widest text-[#e5b853] uppercase">Welcome to the Elite Synergy</span>
-            </div>
-
-            <!-- Main Heading -->
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                WE ARE YOUR <br class="hidden md:block">
-                <span class="bg-gradient-to-r from-white via-[#f3d38c] to-[#c4922b] bg-clip-text text-transparent">ULTIMATE SOLUTION</span>
-            </h1>
+    <!-- MAIN INTERACTIVE HUB (Responsive Grid) -->
+    <main class="w-full z-20 relative flex-grow flex flex-col justify-center py-12 px-4 lg:px-16">
+        <div class="container mx-auto">
             
-            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-                Elevating standards in <span class="text-white font-medium">Human Resources</span> and <span class="text-white font-medium">Building Maintenance Services</span> with seamless corporate synergy.
-            </p>
-
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#services" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#c4922b] to-[#e5b853] text-[#0b0204] font-bold rounded-lg shadow-xl shadow-[#c4922b]/10 glow-hover tracking-wide text-sm uppercase">
-                    Explore Our Services
-                </a>
-                <a href="#about" class="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-white/5 text-white font-medium rounded-lg border border-white/20 transition-all duration-300 text-sm">
-                    Learn Corporate Profile
-                </a>
-            </div>
-        </div>
-
-        <!-- Smooth Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 opacity-70">
-            <span class="text-xs uppercase tracking-widest">Scroll</span>
-            <div class="w-[1px] h-12 bg-gradient-to-b from-gray-500 to-transparent relative overflow-hidden">
-                <div class="w-full h-1/2 bg-gold absolute top-0 left-0 animate-[bounce_2s_infinite]"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT / OVERVIEW SECTION -->
-    <section id="about" class="py-24 bg-[#0f0407] border-y border-white/[0.03]">
-        <div class="container mx-auto px-6 lg:px-16">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <p class="color-gold font-semibold tracking-wider text-sm uppercase mb-3">Company Overview</p>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">PT. Empat Sinergi Utama</h2>
-                    <p class="text-gray-400 mb-6 leading-relaxed">
-                        Dibuat dengan komitmen tinggi untuk menghadirkan integrasi terbaik di kelasnya. Kami melayani korporasi skala besar nasional untuk memastikan ekosistem ketenagakerjaan dan fasilitas gedung Anda berjalan tanpa hambatan dengan efisiensi maksimal.
-                    </p>
-                    <div class="border-l-2 border-[#c4922b] pl-4 italic text-gray-300 my-6">
-                        "Sinergi empat pilar utama: Integritas, Profesionalisme, Kualitas Layanan, dan Keberlanjutan."
-                    </div>
+            <!-- Welcome Title Section -->
+            <div class="text-center lg:text-left mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#580c12]/5 border border-[#ba8b25]/30 mb-4">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#ba8b25] animate-pulse"></span>
+                    <span class="text-[10px] font-bold tracking-widest text-[#ba8b25] uppercase">PT. Empat Sinergi Utama</span>
                 </div>
-                <!-- Interactive Grid/Stat -->
-                <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
-                    <div class="p-6 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[#6b0d15]/50 transition-all duration-300">
-                        <h3 class="text-3xl font-bold color-gold mb-2">100%</h3>
-                        <p class="text-sm text-gray-400 font-medium">SLA Terjamin</p>
-                    </div>
-                    <div class="p-6 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[#6b0d15]/50 transition-all duration-300">
-                        <h3 class="text-3xl font-bold color-gold mb-2">Premium</h3>
-                        <p class="text-sm text-gray-400 font-medium">Kualitas SDM</p>
-                    </div>
-                    <div class="p-6 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[#6b0d15]/50 transition-all duration-300">
-                        <h3 class="text-3xl font-bold color-gold mb-2">24/7</h3>
-                        <p class="text-sm text-gray-400 font-medium">Sistem Monitoring</p>
-                    </div>
-                    <div class="p-6 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[#6b0d15]/50 transition-all duration-300">
-                        <h3 class="text-3xl font-bold color-gold mb-2">Integrated</h3>
-                        <p class="text-sm text-gray-400 font-medium">Dashboard Solusi</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES SECTION (Premium Grid Upgrade) -->
-    <section id="services" class="py-24 relative">
-        <div class="container mx-auto px-6 lg:px-16 relative z-10">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <p class="color-gold font-semibold tracking-wider text-sm uppercase mb-3">Our Core Sectors</p>
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Layanan Premium Kami</h2>
-                <div class="h-[2px] w-20 bg-gradient-to-r from-[#6b0d15] to-[#c4922b] mx-auto"></div>
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight text-gray-900 uppercase leading-none">
+                    WE ARE YOUR <span class="text-[#580c12] lg:text-white lg:drop-shadow-sm">SOLUTION</span>
+                </h1>
+                <p class="text-gray-600 text-xs md:text-sm tracking-wide max-w-xl mt-3 font-medium">
+                    Penyedia Solusi Terintegrated untuk Kebutuhan Operasional Bisnis, Manajemen Fasilitas Gedung, dan Ketenagakerjaan Ahli.
+                </p>
             </div>
 
-            <!-- Service Grid (Responsive, Clean Card design) -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
-                        <i class="fa-solid fa-broom"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Cleaning Services</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Manajemen kebersihan menyeluruh berstandar tinggi untuk gedung perkantoran, komersial, dan industrial.</p>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
+            <!-- 7 RECONFIGURED PREMIUM SERVICE TILES (Ultra Responsive Grid) -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6 w-full px-2">
+                
+                <!-- Tile 1: Jasa Keamanan -->
+                <div class="flex flex-col items-center text-center gap-3">
+                    <button onclick="openModal('service-security')" class="w-16 h-16 rounded-full premium-icon-btn flex items-center justify-center text-[#580c12] text-xl">
                         <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Security Force</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Personel keamanan terlatih dengan kualifikasi fisik, mental, dan penguasaan taktis pengamanan aset korporasi.</p>
+                    </button>
+                    <span class="text-[10px] md:text-[11px] font-bold tracking-wider text-gray-800 uppercase px-1">Jasa Keamanan</span>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
+                <!-- Tile 2: Jasa Kebersihan -->
+                <div class="flex flex-col items-center text-center gap-3">
+                    <button onclick="openModal('service-cleaning')" class="w-16 h-16 rounded-full premium-icon-btn flex items-center justify-center text-[#580c12] text-xl">
+                        <i class="fa-solid fa-broom"></i>
+                    </button>
+                    <span class="text-[10px] md:text-[11px] font-bold tracking-wider text-gray-800 uppercase px-1">Jasa Kebersihan</span>
+                </div>
+
+                <!-- Tile 3: Tenaga Kerja Pendukung -->
+                <div class="flex flex-col items-center text-center gap-3">
+                    <button onclick="openModal('service-support')" class="w-16 h-16 rounded-full premium-icon-btn flex items-center justify-center text-[#580c12] text-xl">
                         <i class="fa-solid fa-user-tie"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Office Boy & Girl</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Tenaga penunjang operasional kantor yang cekatan, berpenampilan rapi, ramah, dan berorientasi pada detail layanan.</p>
+                    </button>
+                    <span class="text-[10px] md:text-[11px] font-bold tracking-wider text-gray-800 uppercase px-1">Tenaga Pendukung</span>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="400">
-                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
-                        <i class="fa-solid fa-motorcycle"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Office Courier</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Layanan kurir internal korporasi yang andal, menjamin kerahasiaan dokumen dan ketepatan waktu distribusi logistik.</p>
+                <!-- Tile 4: Perawatan Taman -->
+                <div class="flex flex-col items-center text-center gap-3">
+                    <button onclick="openModal('service-gardener')" class="w-16 h-16 rounded-full premium-icon-btn flex items-center justify-center text-[#580c12] text-xl">
+                        <i class="fa-solid fa-seedling"></i>
+                    </button>
+                    <span class="text-[10px] md:text-[11px] font-bold tracking-wider text-gray-800 uppercase px-1">Perawatan Taman</span>
                 </div>
 
-                <!-- Card 5 -->
-                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
-                        <i class="fa-solid fa-car"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Professional Driver</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Pengemudi eksekutif bersertifikasi yang mengutamakan keselamatan berkendara (*defensive driving*) serta etika layanan bintang lima.</p>
+                <!-- Tile 5: Jasa Pengemudi -->
+                <div class="flex flex-col items-center text-center gap-3">
+                    <button onclick="openModal('service-driver')" class="w-16 h-16 rounded-full premium-icon-btn flex items-center justify-center text-[#580c12] text-xl">
+                        <i class="fa-solid fa-id-card"></i>
+                    </button>
+                    <span class="text-[10px] md:text-[11px] font-bold tracking-wider text-gray-800 uppercase px-1">Jasa Pengemudi</span>
                 </div>
 
-                <!-- Card 6 -->
-                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="600">
-                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
-                        <i class="fa-solid fa-bell-concierge"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Receptionist</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed">Garda depan representasi citra perusahaan Anda dengan kemampuan komunikasi prima dan pemecahan masalah yang andal.</p>
+                <!-- Tile 6: Jasa Parkir (FIXED ICON) -->
+                <div class="flex flex-col items-center text-center gap-3">
+                    <button onclick="openModal('service-parking')" class="w-16 h-16 rounded-full premium-icon-btn flex items-center justify-center text-[#580c12] text-xl">
+                        <i class="fa-solid fa-square-parking"></i>
+                    </button>
+                    <span class="text-[10px] md:text-[11px] font-bold tracking-wider text-gray-800 uppercase px-1">Jasa Parkir</span>
                 </div>
+
+                <!-- Tile 7: Daily Worker -->
+                <div class="flex flex-col items-center text-center gap-3 col-span-2 sm:col-span-1 mx-auto sm:mx-0">
+                    <button onclick="openModal('service-daily')" class="w-16 h-16 rounded-full premium-icon-btn flex items-center justify-center text-[#580c12] text-xl">
+                        <i class="fa-solid fa-calendar-day"></i>
+                    </button>
+                    <span class="text-[10px] md:text-[11px] font-bold tracking-wider text-gray-800 uppercase px-1">Daily Worker</span>
+                </div>
+
             </div>
+
+            <!-- Decorative Sub-text Element from PDF -->
+            <div class="mt-14 text-center lg:text-left opacity-60">
+                <p class="text-xs italic text-gray-700 font-medium">“Train people well enough so they can leave. Treat them well enough so they don’t have to.”</p>
+                <span class="text-[9px] uppercase tracking-widest font-bold text-[#ba8b25] mt-0.5 block">- Sir Richard Branson -</span>
+            </div>
+
         </div>
-    </section>
+    </main>
 
-    <!-- INSPIRATIONAL QUOTE SECTION -->
-    <section id="quote" class="py-24 bg-[#0a0204] relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-[#6b0d15]/10 to-transparent pointer-events-none"></div>
-        <div class="container mx-auto px-6 text-center max-w-4xl relative z-10" data-aos="zoom-in">
-            <i class="fa-solid fa-quote-left text-4xl text-[#6b0d15] mb-6 opacity-60"></i>
-            <p class="text-xl md:text-3xl font-light italic text-gray-200 leading-relaxed mb-6">
-                “Train people well enough so they can leave. Treat them well enough so they don’t have to.”
-            </p>
-            <div class="w-12 h-[1px] bg-gold mx-auto mb-4"></div>
-            <p class="text-xs uppercase tracking-widest font-semibold color-gold">- Sir Richard Branson -</p>
-        </div>
-    </section>
-
-    <!-- FOOTER / CONTACT AREA -->
-    <footer id="contact" class="bg-[#060102] text-gray-500 text-sm py-12 border-t border-white/[0.03]">
-        <div class="container mx-auto px-6 lg:px-16 grid md:grid-cols-3 gap-8 mb-12">
-            <div>
-                <img src="logo.png" alt="Logo" class="h-12 mb-4 object-contain">
-                <p class="text-xs text-gray-400 max-w-xs leading-relaxed">Penyedia solusi terintegrasi manajemen fasilitas gedung dan rekrutmen SDM ahli untuk kemajuan bisnis Anda.</p>
+    <!-- COMPACT FOOTER SYSTEM -->
+    <footer class="w-full z-40 relative py-4 px-4 lg:px-16 border-t border-gray-200/50 bg-white/80 text-[11px] text-gray-600">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-center md:text-left">
+            <div class="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-1">
+                <span><i class="fa-solid fa-location-dot text-[#ba8b25] mr-1.5"></i> Casa De Boelac No.3, Tangerang Selatan</span>
+                <span><i class="fa-solid fa-phone text-[#ba8b25] mr-1.5"></i> +62 815 8482 5 000</span>
+                <span><i class="fa-brands fa-instagram text-[#ba8b25] mr-1.5"></i> @pt_4sinergiutama</span>
             </div>
-            <div>
-                <h4 class="text-white font-semibold text-xs tracking-wider uppercase mb-4">Corporate Links</h4>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
-                    <li><a href="#about" class="hover:text-white transition-colors">About Corporate</a></li>
-                    <li><a href="#services" class="hover:text-white transition-colors">Premium Services</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-semibold text-xs tracking-wider uppercase mb-4">Connect</h4>
-                <p class="text-xs text-gray-400 mb-2">Hubungi kami untuk kolaborasi strategis.</p>
-                <a href="mailto:info@empatsinergiutama.co.id" class="text-xs color-gold hover:underline">info@empatsinergiutama.co.id</a>
-            </div>
-        </div>
-        <div class="container mx-auto px-6 lg:px-16 pt-8 border-t border-white/[0.02] flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
-            <p>&copy; 2026 PT. Empat Sinergi Utama. All Rights Reserved.</p>
-            <div class="flex gap-4">
-                <a href="#" class="hover:text-white"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+            <div class="font-semibold text-gray-400">
+                &copy; 2026 <span class="text-[#580c12] font-bold">PT. Empat Sinergi Utama</span>. All Rights Reserved.
             </div>
         </div>
     </footer>
 
-    <!-- Scripts for Scroll Effects and Responsive Navigation -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- ========================================== -->
+    <!-- DYNAMIC CORE INFORMATION MODALS (POP-UPS) -->
+    <!-- ========================================== -->
+
+    <!-- About Us Modal -->
+    <div id="modal-about-us" class="modal-overlay fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-2xl w-full p-6 md:p-8 rounded-3xl relative shadow-2xl">
+            <button onclick="closeModal('about-us')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <span class="text-[9px] font-bold tracking-widest text-[#ba8b25] uppercase block mb-1">Who We Are</span>
+            <h2 class="text-xl font-bold text-[#580c12] mb-4">PT. Empat Sinergi Utama</h2>
+            <p class="text-xs text-gray-600 leading-relaxed text-justify mb-3">
+                PT. Empat Sinergi Utama adalah perusahaan penyedia tenaga kerja alih daya yang berkomitmen memberikan solusi terbaik untuk kebutuhan operasional bisnis Anda. Dengan tim profesional berpengalaman lebih dari 15 tahun di bidangnya, kami siap menyediakan SDM berkualitas tinggi.
+            </p>
+            <p class="text-xs text-gray-600 leading-relaxed text-justify bg-gray-50 p-3 rounded-xl border border-gray-100">
+                CEO kami memiliki rekam jejak sukses selama lebih dari 15 tahun mendukung kelancaran operasional di lebih dari 50 perusahaan rekanan multinasional skala besar.
+            </p>
+        </div>
+    </div>
+
+    <!-- Vision & Mission Modal -->
+    <div id="modal-vision-mission" class="modal-overlay fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-2xl w-full p-6 md:p-8 rounded-3xl relative shadow-2xl">
+            <button onclick="closeModal('vision-mission')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <span class="text-[9px] font-bold tracking-widest text-[#ba8b25] uppercase block mb-1">Asas Perusahaan</span>
+            <h2 class="text-xl font-bold text-[#580c12] mb-4">Visi & Misi</h2>
+            <div class="bg-[#580c12]/5 p-3.5 rounded-xl border-l-4 border-[#ba8b25] text-xs text-gray-700 italic mb-4 leading-relaxed">
+                <strong>Visi:</strong> "Menjadi Penyedia Layanan Jasa Tenaga Kerja Alih Daya yang terpercaya dan unggul serta dapat memberdayakan bisnis untuk mencapai efisiensi operasional, inovasi berkelanjutan dan memberikan nilai tambah bagi seluruh pemangku kepentingan."
+            </div>
+            <h4 class="text-xs font-bold text-gray-800 uppercase tracking-wider mb-2">4 Pilar Goal Utama:</h4>
+            <ul class="space-y-1.5 text-xs text-gray-600">
+                <li><i class="fa-solid fa-circle-check text-[#ba8b25] mr-2"></i> Memberikan kualitas layanan bernilai tinggi berbasis integrasi teknologi perkantoran.</li>
+                <li><i class="fa-solid fa-circle-check text-[#ba8b25] mr-2"></i> Membangun hubungan kemitraan operasional jangka panjang yang taktis dan hemat biaya.</li>
+                <li><i class="fa-solid fa-circle-check text-[#ba8b25] mr-2"></i> Menciptakan ekosistem lingkungan kerja kondusif demi mendongkrak produktivitas tenaga kerja.</li>
+                <li><i class="fa-solid fa-circle-check text-[#ba8b25] mr-2"></i> Menjunjung integritas moral, aturan hukum ketenagakerjaan, dan profesionalisme pasar.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal -->
+    <div id="modal-portfolio" class="modal-overlay fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-2xl w-full p-6 md:p-8 rounded-3xl relative shadow-2xl">
+            <button onclick="closeModal('portfolio')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <span class="text-[9px] font-bold tracking-widest text-[#ba8b25] uppercase block mb-1">Track Record</span>
+            <h2 class="text-xl font-bold text-[#580c12] mb-4">Project Portfolio</h2>
+            <div class="grid grid-cols-2 gap-2 text-center text-xs font-bold text-gray-700 mb-4">
+                <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">KEMENPORA RI</div>
+                <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">KOTA TANGERANG SELATAN</div>
+                <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">BAPPELITBANGDA TANGSEL</div>
+                <div class="p-3 bg-gray-50 rounded-xl border border-gray-100">BKAD TANGSEL</div>
+            </div>
+            <p class="text-[11px] text-gray-500 text-center italic leading-relaxed">
+                Serta dipercaya mengelola proyek Daily Worker Swasta nasional seperti Johnny Rockets, Sky Tree Pictures, Ciel Kids, Sap Coffee, Ale Funky Rockschool, dan Heart Pictures.
+            </p>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- LAYANAN DETAIL POPUPS (INDIVIDUAL TILES)   -->
+    <!-- ========================================== -->
+    <div id="modal-service-security" class="modal-overlay fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 rounded-3xl relative">
+            <button onclick="closeModal('service-security')" class="absolute top-4 right-4 text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="font-bold text-[#580c12] text-lg mb-2">Jasa Keamanan (Security)</h3>
+            <p class="text-xs text-gray-600 leading-relaxed text-justify">Layanan pengamanan fisik komprehensif (BUJP Resmi) yang melingkupi penyediaan personel terlatih, pengawalan aset berharga, kualifikasi mental mumpuni, serta penerapan teknologi kontrol guna menjaga ketertiban lingkungan korporasi.</p>
+        </div>
+    </div>
+
+    <div id="modal-service-cleaning" class="modal-overlay fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 rounded-3xl relative">
+            <button onclick="closeModal('service-cleaning')" class="absolute top-4 right-4 text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="font-bold text-[#580c12] text-lg mb-2">Jasa Kebersihan (Cleaning Service)</h3>
+            <p class="text-xs text-gray-600 leading-relaxed text-justify">Layanan kebersihan dan higienitas ruangan bangunan terpadu dengan dukungan tenaga kerja cekatan, peralatan mekanikal khusus, serta bahan kimia ramah lingkungan guna menciptakan area kerja yang sehat dan steril.</p>
+        </div>
+    </div>
+
+    <div id="modal-service-support" class="modal-overlay fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 rounded-3xl relative">
+            <button onclick="closeModal('service-support')" class="absolute top-4 right-4 text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="font-bold text-[#580c12] text-lg mb-2">Jasa Tenaga Kerja Pendukung Kantor</h3>
+            <p class="text-xs text-gray-600 leading-relaxed text-justify">Penyediaan tenaga kerja non-core penunjang aktivitas harian kantor yang melingkupi posisi strategis seperti: Office Boy/Girl, Pramubakti, Resepsionis garda depan, Kurir distribusi internal, serta staf Office Support operasional.</p>
+        </div>
+    </div>
+
+    <div id="modal-service-gardener" class="modal-overlay fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 rounded-3xl relative">
+            <button onclick="closeModal('service-gardener')" class="absolute top-4 right-4 text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="font-bold text-[#580c12] text-lg mb-2">Jasa Perawatan Taman (Gardener)</h3>
+            <p class="text-xs text-gray-600 leading-relaxed text-justify">Layanan lanskap profesional untuk pengerjaan tata kelola area hijau, perawatan berkala, pemangkasan tanaman estetika, guna memelihara keasrian lingkungan eksterior kompleks gedung perkantoran.</p>
+        </div>
+    </div>
+
+    <div id="modal-service-driver" class="modal-overlay fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 rounded-3xl relative">
+            <button onclick="closeModal('service-driver')" class="absolute top-4 right-4 text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="font-bold text-[#580c12] text-lg mb-2">Jasa Pengemudi</h3>
+            <p class="text-xs text-gray-600 leading-relaxed text-justify">Penyediaan pengemudi eksekutif bersertifikasi keahlian berkendara prima (defensive driving) yang mengedepankan etika sopan santun tinggi dan keselamatan mobilitas direksi korporasi.</p>
+        </div>
+    </div>
+
+    <div id="modal-service-parking" class="modal-overlay fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 rounded-3xl relative">
+            <button onclick="closeModal('service-parking')" class="absolute top-4 right-4 text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="font-bold text-[#580c12] text-lg mb-2">Jasa Parkir (Secure Parking)</h3>
+            <p class="text-xs text-gray-600 leading-relaxed text-justify">Manajemen tata ruang parkir kendaraan yang aman, akuntabel, dan teratur dengan sistem pos kontrol terpadu guna memberikan rasa nyaman bagi tamu maupun karyawan internal perusahaan.</p>
+        </div>
+    </div>
+
+    <div id="modal-service-daily" class="modal-overlay fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-6 rounded-3xl relative">
+            <button onclick="closeModal('service-daily')" class="absolute top-4 right-4 text-gray-400"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="font-bold text-[#580c12] text-lg mb-2">Daily Worker Project</h3>
+            <p class="text-xs text-gray-600 leading-relaxed text-justify">Penyediaan tenaga kerja lepas harian penunjang operasional event atau masa krusial bisnis yang diatur fleksibel melalui Perjanjian Kerja Waktu Tertentu (PKWT) guna efisiensi anggaran korporasi.</p>
+        </div>
+    </div>
+
+    <!-- Core Interactive Control Scripts -->
     <script>
-        // Init AOS Animation
-        AOS.init({
-            once: true,
-            duration: 1000
-        });
-
-        // Sticky Header Script
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('mainHeader');
-            if (window.scrollY > 50) {
-                header.classList.add('header-scrolled', 'py-3');
-                header.classList.remove('py-5');
-            } else {
-                header.classList.remove('header-scrolled', 'py-3');
-                header.classList.add('py-5');
+        // Modal Control System
+        function openModal(modalId) {
+            const modal = document.getElementById('modal-' + modalId);
+            if (modal) {
+                modal.classList.add('active');
             }
-        });
+        }
 
-        // Mobile Menu Toggle
+        function closeModal(modalId) {
+            const modal = document.getElementById('modal-' + modalId);
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        // Close modal automatically if clicking overlay outside content card
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+
+        // Mobile Menu Navigation Toggle
         function toggleMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             const icon = document.getElementById('menuIcon');
             
             if (menu.classList.contains('hidden')) {
                 menu.classList.remove('hidden');
+                menu.classList.add('flex');
                 icon.classList.remove('fa-bars-staggered');
                 icon.classList.add('fa-xmark');
-                document.body.style.overflow = 'hidden'; // prevent bg scroll
             } else {
                 menu.classList.add('hidden');
+                menu.classList.remove('flex');
                 icon.classList.remove('fa-xmark');
                 icon.classList.add('fa-bars-staggered');
-                document.body.style.overflow = 'auto';
             }
         }
     </script>
