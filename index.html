@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PT. Empat Sinergi Utama</title>
+    
+    <!-- Meta Tags SEO & OG -->
+    <meta name="description" content="PT. Empat Sinergi Utama - Penyedia Layanan Solusi Human Resources dan Building Maintenance Terbaik dan Terpercaya.">
+    <meta property="og:title" content="PT. Empat Sinergi Utama"/>
+    <meta property="og:description" content="Solusi terintegrasi untuk kebutuhan bisnis Anda." />
+    <meta property="og:url" content="https://empatsinergiutama.co.id" />
+    <meta property="og:image" content="2.png" />
+    <meta name="robots" content="index, follow">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome & AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Premium Styling (Menggunakan Warna dari Logo 2.png) -->
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0204; /* Dark rich background */
+        }
+        h1, h2, h3, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Custom Colors based on Logo */
+        .color-maroon { color: #6b0d15; }
+        .bg-maroon { background-color: #6b0d15; }
+        .color-gold { color: #c4922b; }
+        .bg-gold { background-color: #c4922b; }
+        
+        /* Premium Gradient Header on Scroll */
+        .header-scrolled {
+            background: rgba(11, 2, 4, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(196, 146, 43, 0.2);
+        }
+        
+        /* Gold Glow Effect */
+        .glow-hover:hover {
+            box-shadow: 0 0 20px rgba(196, 146, 43, 0.4);
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="text-gray-100 overflow-x-hidden">
+
+    <!-- HEADER / NAVIGATION -->
+    <header id="mainHeader" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5">
+        <div class="container mx-auto px-6 lg:px-16 flex justify-between items-center">
+            <!-- Logo area -->
+            <a href="#" class="flex items-center gap-3">
+                <!-- Fallback jika file 2.png ditaruh di folder yang sama -->
+                <img src="logo.png" alt="PT. Empat Sinergi Utama Logo" class="h-12 lg:h-14 object-contain">
+            </a>
+            
+            <!-- Desktop Menu -->
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="#" class="text-sm font-medium hover:color-gold transition-colors text-white">Home</a>
+                <a href="#about" class="text-sm font-medium text-gray-300 hover:color-gold transition-colors">About Us</a>
+                <a href="#services" class="text-sm font-medium text-gray-300 hover:color-gold transition-colors">Services</a>
+                <a href="#quote" class="text-sm font-medium text-gray-300 hover:color-gold transition-colors">Philosophy</a>
+                <a href="#contact" class="px-5 py-2.5 bg-gradient-to-r from-[#6b0d15] to-[#8a141e] border border-[#c4922b]/30 rounded-full text-xs font-semibold tracking-wider uppercase text-white hover:border-[#c4922b] transition-all duration-300 shadow-lg">Contact Us</a>
+            </nav>
+
+            <!-- Mobile Burger Menu Button -->
+            <button onclick="toggleMobileMenu()" class="lg:hidden text-white text-2xl focus:outline-none">
+                <i id="menuIcon" class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- MOBILE NAVIGATION DROPDOWN -->
+    <div id="mobileMenu" class="fixed inset-0 bg-[#0b0204]/fa z-40 hidden backdrop-blur-lg flex flex-col justify-center items-center gap-8 text-center transition-all duration-300">
+        <a onclick="toggleMobileMenu()" href="#" class="text-xl font-semibold text-white hover:color-gold">Home</a>
+        <a onclick="toggleMobileMenu()" href="#about" class="text-xl font-semibold text-white hover:color-gold">About Us</a>
+        <a onclick="toggleMobileMenu()" href="#services" class="text-xl font-semibold text-white hover:color-gold">Services</a>
+        <a onclick="toggleMobileMenu()" href="#quote" class="text-xl font-semibold text-white hover:color-gold">Philosophy</a>
+        <a onclick="toggleMobileMenu()" href="#contact" class="px-8 py-3 bg-gold text-[#0b0204] font-bold rounded-full">Contact Us</a>
+    </div>
+
+    <!-- HERO SECTION (Ultra Premium Visuals) -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden">
+        <!-- Background Overlay & Subtle Gradient -->
+        <div class="absolute inset-0 bg-radial-[circle_at_center,rgba(107,13,21,0.15)_0%,rgba(11,2,4,1)_70%] z-0"></div>
+        
+        <!-- Premium Abstract Background Graphic elements -->
+        <div class="absolute top-1/4 left-1/10 w-96 h-96 bg-[#6b0d15]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/10 w-96 h-96 bg-[#c4922b]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="container mx-auto px-6 lg:px-16 text-center relative z-10" data-aos="fade-up" data-aos-duration="1200">
+            <!-- Mini Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#6b0d15]/30 border border-[#c4922b]/30 mb-8 backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                <span class="text-xs font-semibold tracking-widest text-[#e5b853] uppercase">Welcome to the Elite Synergy</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                WE ARE YOUR <br class="hidden md:block">
+                <span class="bg-gradient-to-r from-white via-[#f3d38c] to-[#c4922b] bg-clip-text text-transparent">ULTIMATE SOLUTION</span>
+            </h1>
+            
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+                Elevating standards in <span class="text-white font-medium">Human Resources</span> and <span class="text-white font-medium">Building Maintenance Services</span> with seamless corporate synergy.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#services" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#c4922b] to-[#e5b853] text-[#0b0204] font-bold rounded-lg shadow-xl shadow-[#c4922b]/10 glow-hover tracking-wide text-sm uppercase">
+                    Explore Our Services
+                </a>
+                <a href="#about" class="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-white/5 text-white font-medium rounded-lg border border-white/20 transition-all duration-300 text-sm">
+                    Learn Corporate Profile
+                </a>
+            </div>
+        </div>
+
+        <!-- Smooth Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 opacity-70">
+            <span class="text-xs uppercase tracking-widest">Scroll</span>
+            <div class="w-[1px] h-12 bg-gradient-to-b from-gray-500 to-transparent relative overflow-hidden">
+                <div class="w-full h-1/2 bg-gold absolute top-0 left-0 animate-[bounce_2s_infinite]"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT / OVERVIEW SECTION -->
+    <section id="about" class="py-24 bg-[#0f0407] border-y border-white/[0.03]">
+        <div class="container mx-auto px-6 lg:px-16">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <p class="color-gold font-semibold tracking-wider text-sm uppercase mb-3">Company Overview</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">PT. Empat Sinergi Utama</h2>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Dibuat dengan komitmen tinggi untuk menghadirkan integrasi terbaik di kelasnya. Kami melayani korporasi skala besar nasional untuk memastikan ekosistem ketenagakerjaan dan fasilitas gedung Anda berjalan tanpa hambatan dengan efisiensi maksimal.
+                    </p>
+                    <div class="border-l-2 border-[#c4922b] pl-4 italic text-gray-300 my-6">
+                        "Sinergi empat pilar utama: Integritas, Profesionalisme, Kualitas Layanan, dan Keberlanjutan."
+                    </div>
+                </div>
+                <!-- Interactive Grid/Stat -->
+                <div class="grid grid-cols-2 gap-4" data-aos="fade-left">
+                    <div class="p-6 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[#6b0d15]/50 transition-all duration-300">
+                        <h3 class="text-3xl font-bold color-gold mb-2">100%</h3>
+                        <p class="text-sm text-gray-400 font-medium">SLA Terjamin</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[#6b0d15]/50 transition-all duration-300">
+                        <h3 class="text-3xl font-bold color-gold mb-2">Premium</h3>
+                        <p class="text-sm text-gray-400 font-medium">Kualitas SDM</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[#6b0d15]/50 transition-all duration-300">
+                        <h3 class="text-3xl font-bold color-gold mb-2">24/7</h3>
+                        <p class="text-sm text-gray-400 font-medium">Sistem Monitoring</p>
+                    </div>
+                    <div class="p-6 rounded-xl bg-white/[0.02] border border-white/[0.05] hover:border-[#6b0d15]/50 transition-all duration-300">
+                        <h3 class="text-3xl font-bold color-gold mb-2">Integrated</h3>
+                        <p class="text-sm text-gray-400 font-medium">Dashboard Solusi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION (Premium Grid Upgrade) -->
+    <section id="services" class="py-24 relative">
+        <div class="container mx-auto px-6 lg:px-16 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <p class="color-gold font-semibold tracking-wider text-sm uppercase mb-3">Our Core Sectors</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Layanan Premium Kami</h2>
+                <div class="h-[2px] w-20 bg-gradient-to-r from-[#6b0d15] to-[#c4922b] mx-auto"></div>
+            </div>
+
+            <!-- Service Grid (Responsive, Clean Card design) -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Cleaning Services</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Manajemen kebersihan menyeluruh berstandar tinggi untuk gedung perkantoran, komersial, dan industrial.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Security Force</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Personel keamanan terlatih dengan kualifikasi fisik, mental, dan penguasaan taktis pengamanan aset korporasi.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Office Boy & Girl</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Tenaga penunjang operasional kantor yang cekatan, berpenampilan rapi, ramah, dan berorientasi pada detail layanan.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
+                        <i class="fa-solid fa-motorcycle"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Office Courier</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Layanan kurir internal korporasi yang andal, menjamin kerahasiaan dokumen dan ketepatan waktu distribusi logistik.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Professional Driver</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Pengemudi eksekutif bersertifikasi yang mengutamakan keselamatan berkendara (*defensive driving*) serta etika layanan bintang lima.</p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="p-8 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent border border-white/[0.05] hover:border-[#c4922b]/40 transition-all duration-500 group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-12 h-12 rounded-xl bg-[#6b0d15]/20 flex items-center justify-center color-gold text-xl mb-6 group-hover:bg-[#c4922b] group-hover:text-[#0b0204] transition-all duration-300">
+                        <i class="fa-solid fa-bell-concierge"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Receptionist</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Garda depan representasi citra perusahaan Anda dengan kemampuan komunikasi prima dan pemecahan masalah yang andal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSPIRATIONAL QUOTE SECTION -->
+    <section id="quote" class="py-24 bg-[#0a0204] relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-[#6b0d15]/10 to-transparent pointer-events-none"></div>
+        <div class="container mx-auto px-6 text-center max-w-4xl relative z-10" data-aos="zoom-in">
+            <i class="fa-solid fa-quote-left text-4xl text-[#6b0d15] mb-6 opacity-60"></i>
+            <p class="text-xl md:text-3xl font-light italic text-gray-200 leading-relaxed mb-6">
+                “Train people well enough so they can leave. Treat them well enough so they don’t have to.”
+            </p>
+            <div class="w-12 h-[1px] bg-gold mx-auto mb-4"></div>
+            <p class="text-xs uppercase tracking-widest font-semibold color-gold">- Sir Richard Branson -</p>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACT AREA -->
+    <footer id="contact" class="bg-[#060102] text-gray-500 text-sm py-12 border-t border-white/[0.03]">
+        <div class="container mx-auto px-6 lg:px-16 grid md:grid-cols-3 gap-8 mb-12">
+            <div>
+                <img src="2.png" alt="Logo" class="h-12 mb-4 object-contain">
+                <p class="text-xs text-gray-400 max-w-xs leading-relaxed">Penyedia solusi terintegrasi manajemen fasilitas gedung dan rekrutmen SDM ahli untuk kemajuan bisnis Anda.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-xs tracking-wider uppercase mb-4">Corporate Links</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="#about" class="hover:text-white transition-colors">About Corporate</a></li>
+                    <li><a href="#services" class="hover:text-white transition-colors">Premium Services</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold text-xs tracking-wider uppercase mb-4">Connect</h4>
+                <p class="text-xs text-gray-400 mb-2">Hubungi kami untuk kolaborasi strategis.</p>
+                <a href="mailto:info@empatsinergiutama.co.id" class="text-xs color-gold hover:underline">info@empatsinergiutama.co.id</a>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 lg:px-16 pt-8 border-t border-white/[0.02] flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+            <p>&copy; 2026 PT. Empat Sinergi Utama. All Rights Reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts for Scroll Effects and Responsive Navigation -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init AOS Animation
+        AOS.init({
+            once: true,
+            duration: 1000
+        });
+
+        // Sticky Header Script
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled', 'py-3');
+                header.classList.remove('py-5');
+            } else {
+                header.classList.remove('header-scrolled', 'py-3');
+                header.classList.add('py-5');
+            }
+        });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.remove('fa-bars-staggered');
+                icon.classList.add('fa-xmark');
+                document.body.style.overflow = 'hidden'; // prevent bg scroll
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars-staggered');
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+</body>
+</html>
